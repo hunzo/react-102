@@ -13,17 +13,12 @@ const Posts = ({ posts, loading }) => {
     return (
         <div>
             <h1>Pagination table</h1>
-            {/* { JSON.stringify(posts)}  */}
-            {/* <ul>
-                { posts.map( post => (
-                    <li key={post.id}>{post.id},  {post.title}</li>
-                ))}
 
-            </ul> */}
             <table className="table table-sm">
                 <thead className="bg-danger">
                     <tr>
-                        <th className="text-white" onClick={ClickMe}>id.</th>
+                        <th className="text-white" onClick={ClickMe}>Index</th>
+                        <th className="text-white" onClick={ClickMe}>UserID.</th>
                         <th className="text-white" onClick={ClickMe}>Title</th>
                         <th className="text-white" onClick={ClickMe}>Body</th>
                         <th className="text-white">edit</th>
@@ -34,6 +29,7 @@ const Posts = ({ posts, loading }) => {
                     {posts.map((post) => (
                         <tr key={post.id}>
                             <td>{post.id}</td>
+                            <td>{post.userId}</td>
                             <td>{post.title}</td>
                             <td>{post.body}</td>
                             <td>
