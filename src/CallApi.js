@@ -12,6 +12,7 @@ export default function CallApi() {
     const [currentPage, setCurrentPage] = useState(1)
     // const [postPerPage, setPostPerPage] = useState(10)
     const [postPerPage] = useState(10)
+    // const [filterPosts, setfilterPosts] = useState([])
 
     const [q, setQ] = useState("")
 
@@ -46,6 +47,7 @@ export default function CallApi() {
     const paginate = (pageNumber) => setCurrentPage(pageNumber)
 
     const filterPosts = search(posts)
+    // setfilterPosts(search(posts))
 
     const indexOfLastPost = currentPage * postPerPage
     const indexOfFirstPost = indexOfLastPost - postPerPage
