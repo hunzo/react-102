@@ -6,9 +6,13 @@ const Posts = ({ posts, loading }) => {
     }
     // console.log(posts)
 
+    const ClickMe = () => {
+        alert("hi click")
+    }
+
     return (
         <div>
-            <h1>TEST</h1>
+            <h1>Pagination table</h1>
             {/* { JSON.stringify(posts)}  */}
             {/* <ul>
                 { posts.map( post => (
@@ -17,12 +21,26 @@ const Posts = ({ posts, loading }) => {
 
             </ul> */}
             <table className="table table-sm">
+                <thead className="bg-danger">
+                    <tr>
+                        <th className="text-white" onClick={ClickMe}>id.</th>
+                        <th className="text-white" onClick={ClickMe}>Title</th>
+                        <th className="text-white" onClick={ClickMe}>Body</th>
+                        <th className="text-white">edit</th>
+                    </tr>
+                </thead>
+
                 <tbody>
                     {posts.map((post) => (
                         <tr key={post.id}>
                             <td>{post.id}</td>
                             <td>{post.title}</td>
                             <td>{post.body}</td>
+                            <td>
+                                <button className="btn btn-info">
+                                    edit
+                                </button>
+                            </td>
                         </tr>
                     ))}
                 </tbody>
